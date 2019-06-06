@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<th:block th:include="common/head"></th:block>
+
+<body>
+<div class="container">
+    <form>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="currency1"><h3>Currency I have:</h3></label>
+                    <select class="form-control" id="currency1">
+                        <option>EUR</option>
+                        <option>CAD</option>
+                        <option>USD</option>
+                        <option>GBP</option>
+                        <option>AUD</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount1">Amount:</label>
+                    <input type="number" class="form-control" id="amount1" placeholder="Enter amount">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="currency2"><h3>Currency I want:</h3></label>
+                    <select class="form-control" id="currency2">
+                        <option>EUR</option>
+                        <option>CAD</option>
+                        <option>USD</option>
+                        <option>GBP</option>
+                        <option>AUD</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount2">Amount:</label>
+                    <input type="number" class="form-control" id="amount2" placeholder="Enter amount">
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Convert</button>
+    </form>
+</div>
+
+<th:block th:include="common/footer"></th:block>
+</body>
+</html>
