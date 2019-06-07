@@ -12,16 +12,17 @@ import java.util.List;
 
 @SpringBootTest //slows down tests, but allows Spring features such as Dependency Injection
 @RunWith(SpringRunner.class)
-public class TestTest {
+public class DbTest {
     @Autowired
     CurrencyRepository currencyRepository;
 
     @Test
     public void printAll() {
+        System.out.println("Hello!");
         List<Currency> allCurrencies = currencyRepository.getAll();
 
         allCurrencies.forEach(c -> {
-            System.out.printf("Name: %s | Euro Rate: %s", c.getName(), c.getEuroRate());
+            System.out.printf("Name: %s | Euro Rate: %s%n", c.getName(), c.getEuroRate());
         });
     }
 }
