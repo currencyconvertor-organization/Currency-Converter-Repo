@@ -1,5 +1,6 @@
 package com.codexio.devcamp.currencyconvertor.app.utils;
 
+import com.codexio.devcamp.currencyconvertor.constants.Constants;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -17,8 +18,7 @@ public class CurrencyScrape implements CurrencyReader {
     @Override
     public Map<String, String> getCurrencyNameEuroRate() throws IOException {
         Map<String, String> currencies = new HashMap<>();
-        Document doc = Jsoup.connect("https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html").get();
-
+        Document doc = Jsoup.connect(Constants.CURRENCY_CONVERTER_URL).get();
         Elements table = doc.select("tbody");
         Elements tableRows = table.select("tr");
         tableRows.forEach(tr -> {
