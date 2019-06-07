@@ -1,5 +1,6 @@
 package com.codexio.devcamp.currencyconvertor.app.web.controllers;
 
+import com.codexio.devcamp.currencyconvertor.app.domain.models.CurrencyServiceModel;
 import com.codexio.devcamp.currencyconvertor.app.domain.models.CurrencyViewModel;
 import com.codexio.devcamp.currencyconvertor.app.services.CurrencyService;
 import org.modelmapper.ModelMapper;
@@ -26,10 +27,10 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping(value = "/fetch/training-programs-all", produces = "application/json")
+    @GetMapping(value = "/fetch/.....", produces = "application/json")
     @ResponseBody
     public List<CurrencyViewModel> getAll() {
-        return List.of(
+        return   List.of(
                 this.modelMapper.map(
                         this.currencyService.getAllCurrencyServiceModels().toArray(), CurrencyViewModel[].class
                 )

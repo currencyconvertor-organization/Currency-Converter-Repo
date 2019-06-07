@@ -30,7 +30,7 @@ public class CurrencyServiceImpl implements CurrencyService {
     }
 
     @Override
-    @Scheduled(cron = "* * * * * ?")
+//    @Scheduled(cron = "* * * * * ?")
     public void seedCurrencies() throws IOException {
         try {
             Map<String, String> rawCurrencies = this.currencyScrape.getCurrencyNameEuroRate();
