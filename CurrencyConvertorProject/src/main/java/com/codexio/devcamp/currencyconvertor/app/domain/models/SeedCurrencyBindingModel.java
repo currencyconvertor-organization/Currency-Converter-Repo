@@ -3,6 +3,7 @@ package com.codexio.devcamp.currencyconvertor.app.domain.models;
 import com.codexio.devcamp.currencyconvertor.constants.Constants;
 import org.hibernate.validator.constraints.Length;
 
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 
@@ -12,7 +13,10 @@ public class SeedCurrencyBindingModel {
     private String name;
     private BigDecimal euroRate;
 
-    @Length(min = Constants.CURRENCY_NAME_LENGTH, max = Constants.CURRENCY_NAME_LENGTH, message = Constants.INVALID_CURRENCY_NAME_LENGTH_MESSAGE)
+//    @Length(min = Constants.CURRENCY_NAME_LENGTH,
+//            max = Constants.CURRENCY_NAME_LENGTH,
+//            message = Constants.INVALID_CURRENCY_NAME_LENGTH_MESSAGE)
+    @Pattern(regexp = "^[A-Z]{3}$", message = Constants.INVALID_CURRENCY_NAME_LENGTH_MESSAGE)
     public String getName() {
         return this.name;
     }
