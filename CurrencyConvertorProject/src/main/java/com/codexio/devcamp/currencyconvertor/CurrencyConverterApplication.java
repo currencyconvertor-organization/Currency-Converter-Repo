@@ -2,12 +2,14 @@ package com.codexio.devcamp.currencyconvertor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
-public class CurrencyconvertorApplication {
+@EnableScheduling
+public class CurrencyConverterApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CurrencyconvertorApplication.class, args);
+        SpringApplication.run(CurrencyConverterApplication.class, args);
     }
 
 }
