@@ -1,5 +1,8 @@
 package com.codexio.devcamp.currencyconvertor.app.services;
 
-public interface CurrencyService {
 
+import java.io.IOException;
+
+public interface CurrencyService {
+void seedCurrencies() throws IOException;
 }
