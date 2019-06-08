@@ -6,6 +6,8 @@ public abstract class Constants {
             "Currency name should be " + CURRENCY_NAME_LENGTH + " characters long!";
     public static  final String CURRENCY_CONVERTER_URL = "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html";
 
+    public static final String CLIENT_URL = "http://localhost:3001";
+
     private Constants() {
 
     }

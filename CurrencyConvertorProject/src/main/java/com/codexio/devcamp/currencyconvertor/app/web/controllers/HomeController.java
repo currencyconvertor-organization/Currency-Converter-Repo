@@ -3,8 +3,10 @@ package com.codexio.devcamp.currencyconvertor.app.web.controllers;
 import com.codexio.devcamp.currencyconvertor.app.domain.models.CurrencyServiceModel;
 import com.codexio.devcamp.currencyconvertor.app.domain.models.CurrencyViewModel;
 import com.codexio.devcamp.currencyconvertor.app.services.CurrencyService;
+import com.codexio.devcamp.currencyconvertor.constants.Constants;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,6 +15,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/")
+@CrossOrigin(origins = Constants.CLIENT_URL)
 public class HomeController {
     private final CurrencyService currencyService;
     private final ModelMapper modelMapper;
