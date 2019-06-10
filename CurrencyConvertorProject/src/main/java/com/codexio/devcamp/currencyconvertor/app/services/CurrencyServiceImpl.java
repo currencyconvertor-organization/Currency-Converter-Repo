@@ -45,7 +45,7 @@ public class CurrencyServiceImpl implements CurrencyService {
 
             this.currencyRepository.saveAll(currencyList);
         } catch (Exception e) {
-            //TODO
+            //TODO activate second scraping website. If it also fails, visualize exception message for user.
         }
 
     }
