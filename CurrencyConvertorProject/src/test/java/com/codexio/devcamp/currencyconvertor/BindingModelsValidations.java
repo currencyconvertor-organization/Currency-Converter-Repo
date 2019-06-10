@@ -85,8 +85,6 @@ public class BindingModelsValidations {
         this.assertOnlyOneErrorMessageThrown(this.seedCurrencyBindingModel, SeedCurrencyBindingModel.INVALID_CURRENCY_EURO_RATE);
     }
 
-    //TODO InputCurrencyBindingModel tests
-
 
     private Set<String> getErrorMessages(Object bindingModel) {
         return this.validator.validate(bindingModel).stream().map(e -> e.getMessage()).collect(Collectors.toSet());

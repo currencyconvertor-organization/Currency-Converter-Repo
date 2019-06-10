@@ -22,7 +22,7 @@ public class DbTest {
         List<Currency> allCurrencies = currencyRepository.getAll();
 
         allCurrencies.forEach(c -> {
-            System.out.printf("Name: %s | Euro Rate: %s%n", c.getName(), c.getEuroRate());
+            System.out.printf("Name: %s | Euro Rate: %s%n", c.getCode(), c.getEuroRate());
         });
     }
 }

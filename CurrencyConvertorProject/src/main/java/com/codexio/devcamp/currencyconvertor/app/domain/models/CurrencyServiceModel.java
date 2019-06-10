@@ -4,8 +4,10 @@ import java.math.BigDecimal;
 
 public class CurrencyServiceModel {
     private Long id;
+    private String code;
     private String name;
     private BigDecimal euroRate;
+    private String countryFlagUrl;
 
     public CurrencyServiceModel() {
     }
@@ -18,8 +20,16 @@ public class CurrencyServiceModel {
         this.id = id;
     }
 
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -32,5 +42,13 @@ public class CurrencyServiceModel {
 
     public void setEuroRate(BigDecimal euroRate) {
         this.euroRate = euroRate;
+    }
+
+    public String getCountryFlagUrl() {
+        return this.countryFlagUrl;
+    }
+
+    public void setCountryFlagUrl(String countryFlagUrl) {
+        this.countryFlagUrl = countryFlagUrl;
     }
 }
