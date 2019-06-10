@@ -1,22 +1,22 @@
 package com.codexio.devcamp.currencyconvertor.app.domain.models;
 
 import com.codexio.devcamp.currencyconvertor.constants.Constants;
-import org.hibernate.validator.constraints.Length;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 
 public class SeedCurrencyBindingModel {
-    public static final String INVALID_CURRENCY_EURO_RATE = "Euro rate should be a positive number!";
+    public static final String INVALID_CURRENCY_EURO_RATE = "Currency rate should be a positive number!";
+    public static final String NULL_CURRENCY_RATE_MESSAGE = "Currency rate can't be null!";
+
 
     private String name;
     private BigDecimal euroRate;
 
-//    @Length(min = Constants.CURRENCY_NAME_LENGTH,
-//            max = Constants.CURRENCY_NAME_LENGTH,
-//            message = Constants.INVALID_CURRENCY_NAME_LENGTH_MESSAGE)
-    @Pattern(regexp = "^[A-Z]{3}$", message = Constants.INVALID_CURRENCY_NAME_LENGTH_MESSAGE)
+    @Pattern(regexp = "^[A-Z]{3}$", message = Constants.INVALID_CURRENCY_NAME_MESSAGE)
+    @NotNull(message = Constants.NULL_CURRENCY_NAME_MESSAGE)
     public String getName() {
         return this.name;
     }
@@ -26,6 +26,7 @@ public class SeedCurrencyBindingModel {
     }
 
     @Positive(message = INVALID_CURRENCY_EURO_RATE)
+    @NotNull(message = NULL_CURRENCY_RATE_MESSAGE)
     public BigDecimal getEuroRate() {
         return this.euroRate;
     }
