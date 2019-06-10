@@ -24,12 +24,13 @@ public class CurrencyServiceImpl implements CurrencyService {
     }
 
     @Override
-    @Scheduled(cron = "* * * * * ?")
+//    @Scheduled(cron = "* * * * * ?")
     public void seedCurrencies() throws IOException {
         try {
             List<SeedCurrencyBindingModel> rawCurrencies = this.currencyScrape.getCurrencyNameEuroRate();
             List<Currency> currencies = List.of(this.modelMapper.map(rawCurrencies.toArray(),Currency[].class));
             this.currencyRepository.saveAll(currencies);
+
         } catch (Exception e) {
             //TODO activate second scraping website. If it also fails, visualize exception message for user.
         }
@@ -39,6 +40,4 @@ public class CurrencyServiceImpl implements CurrencyService {
     public List<CurrencyServiceModel> getAllCurrencyServiceModels() {
         return  List.of(this.modelMapper.map(this.currencyRepository.getAll().toArray(),CurrencyServiceModel[].class));
     }
-
-
 }

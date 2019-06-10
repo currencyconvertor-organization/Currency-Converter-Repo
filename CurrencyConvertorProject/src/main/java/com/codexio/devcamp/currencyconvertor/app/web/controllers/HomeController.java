@@ -1,6 +1,7 @@
 package com.codexio.devcamp.currencyconvertor.app.web.controllers;
 
 import com.codexio.devcamp.currencyconvertor.app.domain.models.CurrencyServiceModel;
+import com.codexio.devcamp.currencyconvertor.app.domain.models.CurrencyTableViewModel;
 import com.codexio.devcamp.currencyconvertor.app.domain.models.CurrencyViewModel;
 import com.codexio.devcamp.currencyconvertor.app.services.CurrencyService;
 import com.codexio.devcamp.currencyconvertor.constants.Constants;
@@ -36,6 +37,20 @@ public class HomeController {
         return   List.of(
                 this.modelMapper.map(
                         this.currencyService.getAllCurrencyServiceModels().toArray(), CurrencyViewModel[].class
+                )
+        );
+    }
+
+    /**
+     * @return List of all currencies with code, name, euro rate, image url
+     * in JSON format
+     */
+    @GetMapping(value = "/fetch/currencies-table", produces = "application/json")
+    @ResponseBody
+    public List<CurrencyTableViewModel> getAllTableCurrencies() {
+        return   List.of(
+                this.modelMapper.map(
+                        this.currencyService.getAllCurrencyServiceModels().toArray(), CurrencyTableViewModel[].class
                 )
         );
     }

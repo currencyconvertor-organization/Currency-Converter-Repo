@@ -1,29 +1,13 @@
-package com.codexio.devcamp.currencyconvertor.app.domain.entities;
+package com.codexio.devcamp.currencyconvertor.app.domain.models;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
 
-@Table(name = "currencies")
-@Entity
-public class Currency {
-    private Long id;
+public class CurrencyTableViewModel {
     private String code;
     private String name;
     private BigDecimal euroRate;
     private String countryFlagUrl;
 
-    @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Column(nullable = false, columnDefinition = "VARCHAR(3)")
     public String getCode() {
         return this.code;
     }
@@ -32,7 +16,6 @@ public class Currency {
         this.code = code;
     }
 
-    @Column(nullable = false)
     public String getName() {
         return this.name;
     }
@@ -41,7 +24,6 @@ public class Currency {
         this.name = name;
     }
 
-    @Column(name = "euro_rate", nullable = false)
     public BigDecimal getEuroRate() {
         return this.euroRate;
     }
@@ -50,7 +32,6 @@ public class Currency {
         this.euroRate = euroRate;
     }
 
-    @Column(name = "country_flag_url")
     public String getCountryFlagUrl() {
         return this.countryFlagUrl;
     }
