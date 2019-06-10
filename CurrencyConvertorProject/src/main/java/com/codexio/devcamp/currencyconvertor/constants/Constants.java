@@ -8,7 +8,7 @@ public abstract class Constants {
 
     public static  final String CURRENCY_CONVERTER_URL = "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html";
 
-    public static final String CLIENT_URL = "http://localhost:3001";
+    public static final String CLIENT_URL = "http://localhost:3000";
 
     private Constants() {
 
