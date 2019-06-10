@@ -2,19 +2,13 @@ package com.codexio.devcamp.currencyconvertor.app.services;
 
 import com.codexio.devcamp.currencyconvertor.app.domain.entities.Currency;
 import com.codexio.devcamp.currencyconvertor.app.domain.models.CurrencyServiceModel;
-import com.codexio.devcamp.currencyconvertor.app.domain.models.CurrencyViewModel;
+import com.codexio.devcamp.currencyconvertor.app.domain.models.SeedCurrencyBindingModel;
 import com.codexio.devcamp.currencyconvertor.app.repository.CurrencyRepository;
 import com.codexio.devcamp.currencyconvertor.app.utils.CurrencyScrape;
 import org.modelmapper.ModelMapper;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-
 import java.io.IOException;
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.List;
 
 @Service
@@ -30,24 +24,15 @@ public class CurrencyServiceImpl implements CurrencyService {
     }
 
     @Override
-//    @Scheduled(cron = "* * * * * ?")
+    @Scheduled(cron = "* * * * * ?")
     public void seedCurrencies() throws IOException {
         try {
-            Map<String, String> rawCurrencies = this.currencyScrape.getCurrencyNameEuroRate();
-            List<Currency> currencyList = new ArrayList<>();
-            for (Map.Entry<String, String> stringStringEntry : rawCurrencies.entrySet()) {
-                Currency currency = new Currency();
-                currency.setName(stringStringEntry.getKey());
-                currency.setEuroRate(new BigDecimal(stringStringEntry.getValue()));
-
-                currencyList.add(currency);
-            }
-
-            this.currencyRepository.saveAll(currencyList);
+            List<SeedCurrencyBindingModel> rawCurrencies = this.currencyScrape.getCurrencyNameEuroRate();
+            List<Currency> currencies = List.of(this.modelMapper.map(rawCurrencies.toArray(),Currency[].class));
+            this.currencyRepository.saveAll(currencies);
         } catch (Exception e) {
             //TODO activate second scraping website. If it also fails, visualize exception message for user.
         }
-
     }
 
     @Override

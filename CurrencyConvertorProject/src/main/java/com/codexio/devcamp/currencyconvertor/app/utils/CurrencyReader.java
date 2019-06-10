@@ -1,8 +1,11 @@
 package com.codexio.devcamp.currencyconvertor.app.utils;
 
+import com.codexio.devcamp.currencyconvertor.app.domain.models.SeedCurrencyBindingModel;
+
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 public interface CurrencyReader {
-    Map<String, String> getCurrencyNameEuroRate() throws IOException;
+   List<SeedCurrencyBindingModel> getCurrencyNameEuroRate() throws IOException;
 }

@@ -27,7 +27,7 @@ public class BindingModelsValidations {
         this.validator = Validation.buildDefaultValidatorFactory().getValidator();
         this.seedCurrencyBindingModel = new SeedCurrencyBindingModel();
 
-        this.seedCurrencyBindingModel.setName(CORRECT_CURRENCY_NAME);
+        this.seedCurrencyBindingModel.setCode(CORRECT_CURRENCY_NAME);
         this.seedCurrencyBindingModel.setEuroRate(CORRECT_CURRENCY_RATE);
     }
 
@@ -38,28 +38,28 @@ public class BindingModelsValidations {
 
     @Test
     public void seedCurrencyBindingModel_whenNullName_expectNullNameErrorMessage() {
-        this.seedCurrencyBindingModel.setName(null);
+        this.seedCurrencyBindingModel.setCode(null);
 
         this.assertOnlyOneErrorMessageThrown(this.seedCurrencyBindingModel, Constants.NULL_CURRENCY_NAME_MESSAGE);
     }
 
     @Test
     public void seedCurrencyBindingModel_whenShorterThanExpectedName_expectInvalidNameErrorMessage() {
-        this.seedCurrencyBindingModel.setName("BG");
+        this.seedCurrencyBindingModel.setCode("BG");
 
         this.assertOnlyOneErrorMessageThrown(this.seedCurrencyBindingModel, Constants.INVALID_CURRENCY_NAME_MESSAGE);
     }
 
     @Test
     public void seedCurrencyBindingModel_whenLongerThanExpectedName_expectInvalidNameErrorMessage() {
-        this.seedCurrencyBindingModel.setName("BGNN");
+        this.seedCurrencyBindingModel.setCode("BGNN");
 
         this.assertOnlyOneErrorMessageThrown(this.seedCurrencyBindingModel, Constants.INVALID_CURRENCY_NAME_MESSAGE);
     }
 
     @Test
     public void seedCurrencyBindingModel_whenNameIsLowerCaseLetters_expectInvalidNameErrorMessage() {
-        this.seedCurrencyBindingModel.setName("bgn");
+        this.seedCurrencyBindingModel.setCode("bgn");
 
         this.assertOnlyOneErrorMessageThrown(this.seedCurrencyBindingModel, Constants.INVALID_CURRENCY_NAME_MESSAGE);
     }
