@@ -28,8 +28,13 @@ public class CurrencyServiceImpl implements CurrencyService {
     public void seedCurrencies() throws IOException {
         try {
             List<SeedCurrencyBindingModel> rawCurrencies = this.currencyScrape.getCurrencyNameEuroRate();
-            List<Currency> currencies = List.of(this.modelMapper.map(rawCurrencies.toArray(),Currency[].class));
-            this.currencyRepository.saveAll(currencies);
+           rawCurrencies.forEach(rawCurrency -> {
+               if (this.currencyRepository.existsByCode(rawCurrency.getCode())) {
+                   this.currencyRepository.updateCurrencyRate(rawCurrency.getCode(), rawCurrency.getEuroRate());
+               } else {
+                   this.currencyRepository.save(this.modelMapper.map(rawCurrency, Currency.class));
+               }
+           });
 
         } catch (Exception e) {
             //TODO activate second scraping website. If it also fails, visualize exception message for user.
