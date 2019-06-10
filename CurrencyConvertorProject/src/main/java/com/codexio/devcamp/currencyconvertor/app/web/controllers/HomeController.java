@@ -1,6 +1,4 @@
 package com.codexio.devcamp.currencyconvertor.app.web.controllers;
-
-import com.codexio.devcamp.currencyconvertor.app.domain.models.CurrencyServiceModel;
 import com.codexio.devcamp.currencyconvertor.app.domain.models.CurrencyTableViewModel;
 import com.codexio.devcamp.currencyconvertor.app.domain.models.CurrencyViewModel;
 import com.codexio.devcamp.currencyconvertor.app.services.CurrencyService;

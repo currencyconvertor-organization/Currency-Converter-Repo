@@ -9,6 +9,7 @@ public abstract class Constants {
     public static final String NULL_CURRENCY_NAME_MESSAGE = "Currency name can't be null!";
 
     public static  final String CURRENCY_CONVERTER_URL = "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html";
+    public static  final String SECONDARY_CURRENCY_CONVERTER_URL = "https://www.xe.com/currencytables/?from=EUR";
 
     public static final String CLIENT_URL = "http://localhost:3000";
 
