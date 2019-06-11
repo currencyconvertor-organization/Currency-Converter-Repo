@@ -1,0 +1,226 @@
+[
+  {
+    "code": "USD",
+    "name": "US dollar",
+    "euroRate": 1.13,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/USD.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "JPY",
+    "name": "Japanese yen",
+    "euroRate": 122.78,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/JPY.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "BGN",
+    "name": "Bulgarian lev",
+    "euroRate": 1.96,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/BGN.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "CZK",
+    "name": "Czech koruna",
+    "euroRate": 25.63,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/CZK.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "DKK",
+    "name": "Danish krone",
+    "euroRate": 7.47,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/DKK.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "GBP",
+    "name": "Pound sterling",
+    "euroRate": 0.89,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/GBP.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "HUF",
+    "name": "Hungarian forint",
+    "euroRate": 320.21,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/HUF.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "PLN",
+    "name": "Polish zloty",
+    "euroRate": 4.26,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/PLN.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "RON",
+    "name": "Romanian leu",
+    "euroRate": 4.72,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/RON.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "SEK",
+    "name": "Swedish krona",
+    "euroRate": 10.65,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/SEK.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "CHF",
+    "name": "Swiss franc",
+    "euroRate": 1.12,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/CHF.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "ISK",
+    "name": "Icelandic krona",
+    "euroRate": 140.10,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/ISK.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "NOK",
+    "name": "Norwegian krone",
+    "euroRate": 9.78,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/NOK.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "HRK",
+    "name": "Croatian kuna",
+    "euroRate": 7.42,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/HRK.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "RUB",
+    "name": "Russian rouble",
+    "euroRate": 73.14,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/RUB.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "TRY",
+    "name": "Turkish lira",
+    "euroRate": 6.55,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/TRY.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "AUD",
+    "name": "Australian dollar",
+    "euroRate": 1.62,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/AUD.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "BRL",
+    "name": "Brazilian real",
+    "euroRate": 4.39,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/BRL.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "CAD",
+    "name": "Canadian dollar",
+    "euroRate": 1.50,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/CAD.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "CNY",
+    "name": "Chinese yuan renminbi",
+    "euroRate": 7.84,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/CNY.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "HKD",
+    "name": "Hong Kong dollar",
+    "euroRate": 8.86,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/HKD.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "IDR",
+    "name": "Indonesian rupiah",
+    "euroRate": 16098.27,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/IDR.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "ILS",
+    "name": "Israeli shekel",
+    "euroRate": 4.05,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/ILS.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "INR",
+    "name": "Indian rupee",
+    "euroRate": 78.64,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/INR.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "KRW",
+    "name": "South Korean won",
+    "euroRate": 1339.72,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/KRW.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "MXN",
+    "name": "Mexican peso",
+    "euroRate": 21.75,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/MXN.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "MYR",
+    "name": "Malaysian ringgit",
+    "euroRate": 4.71,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/MYR.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "NZD",
+    "name": "New Zealand dollar",
+    "euroRate": 1.71,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/NZD.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "PHP",
+    "name": "Philippine peso",
+    "euroRate": 58.87,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/PHP.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "SGD",
+    "name": "Singapore dollar",
+    "euroRate": 1.55,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/SGD.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "THB",
+    "name": "Thai baht",
+    "euroRate": 35.42,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/THB.gif",
+    "date": "11-Jun-2019"
+  },
+  {
+    "code": "ZAR",
+    "name": "South African rand",
+    "euroRate": 16.80,
+    "countryFlagUrl": "https://www.ecb.europa.eu/shared/img/flags/ZAR.gif",
+    "date": "11-Jun-2019"
+  }
+][][][][]
