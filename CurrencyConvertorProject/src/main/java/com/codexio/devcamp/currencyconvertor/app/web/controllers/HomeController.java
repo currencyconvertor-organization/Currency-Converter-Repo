@@ -62,7 +62,7 @@ public class HomeController {
      */
     @GetMapping(value = "/fetch/currencies-history", produces = "application/json")
     @ResponseBody
-    public List<HistoricalCurrencyBindingModel> getHistoricalCurrencyBindingModels(LocalDate fromDate, LocalDate toDate) throws FileNotFoundException {
-        return this.currencyService.getAllHistoricalCurrencyBindingModels(fromDate,toDate);
+    public List<HistoricalCurrencyBindingModel> getHistoricalCurrencyBindingModels() throws FileNotFoundException {
+        return this.currencyService.getAllHistoricalCurrencyBindingModels(LocalDate.of(2019,5,1),LocalDate.of(2019,7,1));
     }
 }
