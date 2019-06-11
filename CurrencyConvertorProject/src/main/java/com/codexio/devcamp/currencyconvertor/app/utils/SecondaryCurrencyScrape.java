@@ -39,7 +39,8 @@ public class SecondaryCurrencyScrape implements CurrencyReader {
         return currencies;
     }
 
-    static void setSeedCurrencyBindingModel(List<SeedCurrencyBindingModel> currencies, SeedCurrencyBindingModel seedCurrencyBindingModel, String currencyCode, String currencyName, String countryFlagUrl, String rate) {
+    static void setSeedCurrencyBindingModel(List<SeedCurrencyBindingModel> currencies, SeedCurrencyBindingModel seedCurrencyBindingModel,
+                                            String currencyCode, String currencyName, String countryFlagUrl, String rate) {
         seedCurrencyBindingModel.setCode(currencyCode);
         seedCurrencyBindingModel.setName(currencyName);
         seedCurrencyBindingModel.setCountryFlagUrl(countryFlagUrl);

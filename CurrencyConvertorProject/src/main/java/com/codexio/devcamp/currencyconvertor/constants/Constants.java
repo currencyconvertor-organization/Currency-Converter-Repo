@@ -12,6 +12,7 @@ public abstract class Constants {
     public static  final String SECONDARY_CURRENCY_CONVERTER_URL = "https://www.xe.com/currencytables/?from=EUR";
 
     public static final String CLIENT_URL = "http://localhost:3000";
+    public static final String SCRAPPED_WRONG_DATA_MESSAGE = "Something went wrong with the data which has been scrapped!";
 
     private Constants() {
 
