@@ -1,9 +1,6 @@
 package com.codexio.devcamp.currencyconvertor.app.configuration;
 
-import com.codexio.devcamp.currencyconvertor.app.utils.CurrencyScrape;
-import com.codexio.devcamp.currencyconvertor.app.utils.SecondaryCurrencyScrape;
-import com.codexio.devcamp.currencyconvertor.app.utils.ValidatorUtil;
-import com.codexio.devcamp.currencyconvertor.app.utils.ValidatorUtilImpl;
+import com.codexio.devcamp.currencyconvertor.app.utils.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.modelmapper.ModelMapper;
@@ -21,6 +18,10 @@ public class ApplicationBeanConfiguration {
     @Bean
     public SecondaryCurrencyScrape getSecondaryCurrencyScrape() {
         return new SecondaryCurrencyScrape();
+    }
+    @Bean
+    public HistoryCurrencyScrape getHistoryCurrencyScrape() {
+        return new HistoryCurrencyScrape();
     }
 
     @Bean

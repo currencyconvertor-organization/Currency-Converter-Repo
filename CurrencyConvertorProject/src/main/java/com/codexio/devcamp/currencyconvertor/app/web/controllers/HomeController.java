@@ -1,7 +1,7 @@
 package com.codexio.devcamp.currencyconvertor.app.web.controllers;
 import com.codexio.devcamp.currencyconvertor.app.domain.models.CurrencyTableViewModel;
 import com.codexio.devcamp.currencyconvertor.app.domain.models.CurrencyViewModel;
-import com.codexio.devcamp.currencyconvertor.app.domain.models.HistoricalCurrencyBindingModel;
+import com.codexio.devcamp.currencyconvertor.app.domain.models.HistoryCurrencyBindingModel;
 import com.codexio.devcamp.currencyconvertor.app.services.CurrencyService;
 import com.codexio.devcamp.currencyconvertor.constants.Constants;
 import org.modelmapper.ModelMapper;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -62,7 +63,7 @@ public class HomeController {
      */
     @GetMapping(value = "/fetch/currencies-history", produces = "application/json")
     @ResponseBody
-    public List<HistoricalCurrencyBindingModel> getHistoricalCurrencyBindingModels() throws FileNotFoundException {
-        return this.currencyService.getAllHistoricalCurrencyBindingModels(LocalDate.of(2019,5,1),LocalDate.of(2019,7,1));
+    public List<HistoryCurrencyBindingModel> getLastThreeMonthsRates() throws IOException {
+        return this.currencyService.getLastThreeMonthRateBindingModels();
     }
 }
