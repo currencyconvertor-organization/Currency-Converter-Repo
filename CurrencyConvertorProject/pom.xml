@@ -14,11 +14,9 @@
     <packaging>war</packaging>
     <code>currencyconvertor</code>
     <description>Codexio Dev Camp Pre Selection - Currency Convertor Project</description>
-
     <properties>
         <java.version>11</java.version>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -32,7 +30,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -69,14 +66,12 @@
             <artifactId>gson</artifactId>
             <version>2.8.5</version>
         </dependency>
-
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20180813</version>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -85,5 +80,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

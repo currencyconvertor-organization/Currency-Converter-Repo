@@ -8,11 +8,13 @@ public abstract class Constants {
 
     public static final String INVALID_CURRENCY_NAME_MESSAGE =
             "Currency name should start with capital letter and contains only letters";
+    public static final String INVALID_AMOUNT_MESSAGE = "Amount should be a positive number!";
+    public static final String NULL_AMOUNT_MESSAGE = "Amount can't be null!";
     public static final String NULL_CURRENCY_NAME_MESSAGE = "Currency name can't be null!";
-
-    public static  final String CURRENCY_CONVERTER_URL = "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html";
-    public static  final String SECONDARY_CURRENCY_CONVERTER_URL = "https://www.xe.com/currencytables/?from=EUR";
-
+    public static final String NULL_CURRENCY_CODE_MESSAGE = "Currency code can't be null!";
+    public static final String INVALID_CURRENCY_DATE_MESSAGE = "Wrong currency date format.";
+    public static final String CURRENCY_CONVERTER_URL = "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html";
+    public static final String SECONDARY_CURRENCY_CONVERTER_URL = "https://www.xe.com/currencytables/?from=EUR";
     public static final String CLIENT_URL = "http://localhost:3000";
     public static final String SCRAPPED_WRONG_DATA_MESSAGE = "Something went wrong with the data which has been scrapped!";
 
