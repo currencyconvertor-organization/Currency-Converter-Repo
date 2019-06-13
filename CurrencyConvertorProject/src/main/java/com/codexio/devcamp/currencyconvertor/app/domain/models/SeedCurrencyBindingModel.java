@@ -1,7 +1,9 @@
 package com.codexio.devcamp.currencyconvertor.app.domain.models;
 
+import com.codexio.devcamp.currencyconvertor.app.domain.annotations.bean_validation.ValidUrl;
 import com.codexio.devcamp.currencyconvertor.constants.Constants;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
@@ -10,7 +12,7 @@ import java.math.BigDecimal;
 public class SeedCurrencyBindingModel {
     public static final String INVALID_CURRENCY_EURO_RATE = "Currency rate should be a positive number!";
     public static final String NULL_CURRENCY_RATE_MESSAGE = "Currency rate can't be null!";
-
+    public static final String INVALID_FLAG_URL_MESSAGE = "Flag url is null or response is different than 200!";
 
     private String code;
     private String name;
@@ -18,7 +20,7 @@ public class SeedCurrencyBindingModel {
     private BigDecimal euroRate;
 
     @Pattern(regexp = "^[A-Z]{3}$", message = Constants.INVALID_CURRENCY_CODE_MESSAGE)
-    @NotNull(message = Constants.NULL_CURRENCY_NAME_MESSAGE)
+    @NotNull(message = Constants.NULL_CURRENCY_CODE_MESSAGE)
     public String getCode() {
         return this.code;
     }
@@ -27,7 +29,7 @@ public class SeedCurrencyBindingModel {
         this.code = code;
     }
 
-    @Pattern(regexp = "^[A-Z][A-Za-z\\s]+$", message = Constants.INVALID_CURRENCY_NAME_MESSAGE)
+    @Pattern(regexp = "^\\p{Lu}[\\p{L} '-]+$", message = Constants.INVALID_CURRENCY_NAME_MESSAGE)
     @NotNull(message = Constants.NULL_CURRENCY_NAME_MESSAGE)
     public String getName() {
         return name;
@@ -37,6 +39,7 @@ public class SeedCurrencyBindingModel {
         this.name = name;
     }
 
+    @ValidUrl(message = INVALID_FLAG_URL_MESSAGE)
     public String getCountryFlagUrl() {
         return countryFlagUrl;
     }
