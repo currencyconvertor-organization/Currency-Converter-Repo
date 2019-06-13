@@ -16,8 +16,7 @@ public class ImportHistoryCurrencyBindingModel {
     public ImportHistoryCurrencyBindingModel() {
     }
 
-    @Positive(message = Constants.INVALID_AMOUNT_MESSAGE)
-    @NotNull(message = Constants.NULL_AMOUNT_MESSAGE)
+    @NotNull(message = Constants.NULL_CURRENCY_RATE_MESSAGE)
     public String getRate() {
         return rate;
     }

@@ -24,9 +24,8 @@ public class ImportRootHistoryCurrencyBindingModel {
         Cube = cube;
     }
 
-    @Pattern(regexp = "^[\\d]{4}-[\\d]{2}-[\\d]{2}$",message = Constants.INVALID_CURRENCY_DATE_MESSAGE)
-    @NotBlank(message = Constants.INVALID_CURRENCY_DATE_MESSAGE)
-    @NotNull(message = Constants.INVALID_CURRENCY_DATE_MESSAGE)
+    @Pattern(regexp = "^[\\d]{4}-[\\d]{2}-[\\d]{2}$",message = Constants.INVALID_CURRENCY_DATE_FORMAT_MESSAGE)
+    @NotNull(message = Constants.NULL_CURRENCY_DATE_MESSAGE)
     public String getTime() {
         return time;
     }

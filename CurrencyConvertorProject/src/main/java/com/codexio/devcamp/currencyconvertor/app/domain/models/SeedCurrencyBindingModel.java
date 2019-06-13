@@ -10,8 +10,6 @@ import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 
 public class SeedCurrencyBindingModel {
-    public static final String INVALID_CURRENCY_EURO_RATE = "Currency rate should be a positive number!";
-    public static final String NULL_CURRENCY_RATE_MESSAGE = "Currency rate can't be null!";
     public static final String INVALID_FLAG_URL_MESSAGE = "Flag url is null or response is different than 200!";
 
     private String code;
@@ -48,8 +46,8 @@ public class SeedCurrencyBindingModel {
         this.countryFlagUrl = countryFlagUrl;
     }
 
-    @Positive(message = INVALID_CURRENCY_EURO_RATE)
-    @NotNull(message = NULL_CURRENCY_RATE_MESSAGE)
+    @Positive(message = Constants.INVALID_CURRENCY_EURO_RATE)
+    @NotNull(message = Constants.NULL_CURRENCY_RATE_MESSAGE)
     public BigDecimal getEuroRate() {
         return this.euroRate;
     }
