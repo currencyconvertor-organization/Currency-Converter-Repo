@@ -3,7 +3,7 @@ package com.codexio.devcamp.currencyconvertor.constants;
 public abstract class Constants {
     private static final int CURRENCY_CODE_LENGTH = 3;
     public static final String INVALID_CURRENCY_CODE_MESSAGE =
-            "Currency code should be " + CURRENCY_CODE_LENGTH + " characters long and all lower case!";
+            "Currency code should be " + CURRENCY_CODE_LENGTH + " characters long and all upper case!";
     public static final String INVALID_CURRENCY_NAME_MESSAGE =
             "Currency name should start with capital letter and contains only letters";
     public static final String NULL_CURRENCY_NAME_MESSAGE = "Currency name can't be null!";
