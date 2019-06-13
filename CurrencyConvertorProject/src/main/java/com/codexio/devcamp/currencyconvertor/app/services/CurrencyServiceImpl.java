@@ -2,7 +2,7 @@ package com.codexio.devcamp.currencyconvertor.app.services;
 
 import com.codexio.devcamp.currencyconvertor.app.domain.entities.Currency;
 import com.codexio.devcamp.currencyconvertor.app.domain.models.CurrencyServiceModel;
-import com.codexio.devcamp.currencyconvertor.app.domain.models.HistoryCurrencyBindingModel;
+import com.codexio.devcamp.currencyconvertor.app.domain.models.ImportRootHistoryCurrencyBindingModel;
 import com.codexio.devcamp.currencyconvertor.app.domain.models.SeedCurrencyBindingModel;
 import com.codexio.devcamp.currencyconvertor.app.repository.CurrencyRepository;
 import com.codexio.devcamp.currencyconvertor.app.utils.CurrencyScrape;
@@ -40,13 +40,30 @@ public class CurrencyServiceImpl implements CurrencyService {
         this.gson = gson;
     }
 
+    @Override
+    public List<CurrencyServiceModel> getAllCurrencyServiceModels() {
+        return List.of(
+                this.modelMapper.map(
+                        this.currencyRepository.getAll().toArray(), CurrencyServiceModel[].class
+                )
+        );
+    }
+
+    @Override
+    public List<ImportRootHistoryCurrencyBindingModel> getLastThreeMonthRateBindingModels() throws IOException {
+        String jsonCurrencyHistory = this.historyCurrencyScrape.getLastThreeMonthsRates();
+        List<ImportRootHistoryCurrencyBindingModel> importRootHistoryCurrencyBindingModels =
+                List.of(this.gson.fromJson(jsonCurrencyHistory, ImportRootHistoryCurrencyBindingModel[].class));
+        areAllCurrenciesValid(importRootHistoryCurrencyBindingModels);
+        return importRootHistoryCurrencyBindingModels;
+    }
+
     /**
      * This method is scheduled to seeds or update database of every hour.
      * Cron : 0 0 0/1 1/1 * *
      */
-    @Override
     @Scheduled(cron = "0 0 0/1 1/1 * *")
-    public void seedCurrencies() {
+    private void seedCurrencies() {
         List<SeedCurrencyBindingModel> rawCurrencies;
         try {
             rawCurrencies = this.currencyScrape.getCurrencyNameEuroRate();
@@ -72,28 +89,7 @@ public class CurrencyServiceImpl implements CurrencyService {
         });
     }
 
-    @Override
-    public List<CurrencyServiceModel> getAllCurrencyServiceModels() {
-        return List.of(
-                this.modelMapper.map(
-                        this.currencyRepository.getAll().toArray(), CurrencyServiceModel[].class
-                )
-        );
-    }
-
-    /**
-     * This method is scheduled to write once a day currency rates into file.
-     * Cron : 0 0 8 * * ?
-     */
-    @Override
-    @Scheduled(cron = "* * * * * ?")
-    public List<HistoryCurrencyBindingModel> getLastThreeMonthRateBindingModels() throws IOException {
-        String jsonCurrencyHistory = this.historyCurrencyScrape.getLastThreeMonthsRates();
-        List<HistoryCurrencyBindingModel> test =List.of(this.gson.fromJson(jsonCurrencyHistory, HistoryCurrencyBindingModel[].class));
-                return List.of(this.gson.fromJson(jsonCurrencyHistory, HistoryCurrencyBindingModel[].class));
-    }
-
-    private void areAllCurrenciesValid(List<SeedCurrencyBindingModel> rawCurrencies) {
+    private <T> void areAllCurrenciesValid(List<T> rawCurrencies) {
         rawCurrencies.forEach(rawCurrency -> {
             if (!this.validatorUtil.isValid(rawCurrency)) {
                 throw new IllegalArgumentException(Constants.SCRAPPED_WRONG_DATA_MESSAGE);
