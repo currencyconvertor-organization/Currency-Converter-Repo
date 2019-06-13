@@ -16,86 +16,135 @@ import java.util.stream.Collectors;
 
 @RunWith(SpringRunner.class)
 public class BindingModelsValidations {
-    private static final String CORRECT_CURRENCY_NAME = "BGN";
+    private static final String CORRECT_CURRENCY_NAME_LATIN_LETTERS = "British Pound";
+    private static final String CORRECT_CURRENCY_NAME_CYRILLIC_LETTERS = "Български лев";
+    private static final String CORRECT_CURRENCY_NAME_DASH_AND_APOSTROPHE = "Ni-Vanuatu Pa'anga";
+    private static final String CORRECT_CURRENCY_NAME_DOUBLE_ENCODING = "Bàlivian Bolíviano";
+    private static final String CORRECT_CURRENCY_CODE = "BGN";
     private static final BigDecimal CORRECT_CURRENCY_RATE = new BigDecimal("2.5");
+    private static final String CORRECT_FLAG_URL = "https://www.google.com/";
 
     private Validator validator;
-    SeedCurrencyBindingModel seedCurrencyBindingModel;
+    private SeedCurrencyBindingModel validSeedCurrencyBindingModel;
 
     @Before
     public void init() {
         this.validator = Validation.buildDefaultValidatorFactory().getValidator();
-        this.seedCurrencyBindingModel = new SeedCurrencyBindingModel();
 
-        this.seedCurrencyBindingModel.setCode(CORRECT_CURRENCY_NAME);
-        this.seedCurrencyBindingModel.setEuroRate(CORRECT_CURRENCY_RATE);
+        this.validSeedCurrencyBindingModel = new SeedCurrencyBindingModel();
+        this.validSeedCurrencyBindingModel.setName(CORRECT_CURRENCY_NAME_LATIN_LETTERS);
+        this.validSeedCurrencyBindingModel.setCode(CORRECT_CURRENCY_CODE);
+        this.validSeedCurrencyBindingModel.setEuroRate(CORRECT_CURRENCY_RATE);
+        this.validSeedCurrencyBindingModel.setCountryFlagUrl(CORRECT_FLAG_URL);
     }
 
     @Test
-    public void seedCurrencyBindingModel_whenValidSeedCurrency_noExceptions() {
-        Assert.assertTrue(getErrorMessages(this.seedCurrencyBindingModel).isEmpty());
+    public void whenValidSeedCurrency_noExceptions() {
+        Assert.assertTrue(getErrorMessages(this.validSeedCurrencyBindingModel).isEmpty());
+    }
+
+    @Test
+    public void seedCurrencyBindingModel_whenCyrillicLettersName_noExceptions() {
+        this.validSeedCurrencyBindingModel.setName(CORRECT_CURRENCY_NAME_DASH_AND_APOSTROPHE);
+        Assert.assertTrue(getErrorMessages(this.validSeedCurrencyBindingModel).isEmpty());
+    }
+
+    @Test
+    public void seedCurrencyBindingModel_whenDashAndApostropheName_noExceptions() {
+        this.validSeedCurrencyBindingModel.setName(CORRECT_CURRENCY_NAME_CYRILLIC_LETTERS);
+        Assert.assertTrue(getErrorMessages(this.validSeedCurrencyBindingModel).isEmpty());
+    }
+
+    @Test
+    public void seedCurrencyBindingModel_whenDoubleEncodingName_noExceptions() {
+        this.validSeedCurrencyBindingModel.setName(CORRECT_CURRENCY_NAME_DOUBLE_ENCODING);
+        Assert.assertTrue(getErrorMessages(this.validSeedCurrencyBindingModel).isEmpty());
     }
 
     @Test
     public void seedCurrencyBindingModel_whenNullName_expectNullNameErrorMessage() {
-        this.seedCurrencyBindingModel.setCode(null);
+        this.validSeedCurrencyBindingModel.setName(null);
 
-        this.assertOnlyOneErrorMessageThrown(this.seedCurrencyBindingModel, Constants.NULL_CURRENCY_NAME_MESSAGE);
+        this.assertOnlyOneErrorMessageThrown(this.validSeedCurrencyBindingModel, Constants.NULL_CURRENCY_NAME_MESSAGE);
     }
 
     @Test
-    public void seedCurrencyBindingModel_whenShorterThanExpectedName_expectInvalidNameErrorMessage() {
-        this.seedCurrencyBindingModel.setCode("BG");
+    public void seedCurrencyBindingModel_whenNullCode_expectNullCodeErrorMessage() {
+        this.validSeedCurrencyBindingModel.setCode(null);
 
-        this.assertOnlyOneErrorMessageThrown(this.seedCurrencyBindingModel, Constants.INVALID_CURRENCY_NAME_MESSAGE);
+        this.assertOnlyOneErrorMessageThrown(this.validSeedCurrencyBindingModel, Constants.NULL_CURRENCY_CODE_MESSAGE);
     }
 
     @Test
-    public void seedCurrencyBindingModel_whenLongerThanExpectedName_expectInvalidNameErrorMessage() {
-        this.seedCurrencyBindingModel.setCode("BGNN");
+    public void seedCurrencyBindingModel_whenShorterThanExpectedCode_expectInvalidNameErrorMessage() {
+        this.validSeedCurrencyBindingModel.setCode("BG");
 
-        this.assertOnlyOneErrorMessageThrown(this.seedCurrencyBindingModel, Constants.INVALID_CURRENCY_NAME_MESSAGE);
+        this.assertOnlyOneErrorMessageThrown(this.validSeedCurrencyBindingModel, Constants.INVALID_CURRENCY_CODE_MESSAGE);
     }
 
     @Test
-    public void seedCurrencyBindingModel_whenNameIsLowerCaseLetters_expectInvalidNameErrorMessage() {
-        this.seedCurrencyBindingModel.setCode("bgn");
+    public void seedCurrencyBindingModel_whenLongerThanExpectedCode_expectInvalidNameErrorMessage() {
+        this.validSeedCurrencyBindingModel.setCode("BGNN");
 
-        this.assertOnlyOneErrorMessageThrown(this.seedCurrencyBindingModel, Constants.INVALID_CURRENCY_NAME_MESSAGE);
+        this.assertOnlyOneErrorMessageThrown(this.validSeedCurrencyBindingModel, Constants.INVALID_CURRENCY_CODE_MESSAGE);
+    }
+
+    @Test
+    public void seedCurrencyBindingModel_whenCodeIsLowerCaseLetters_expectInvalidNameErrorMessage() {
+        this.validSeedCurrencyBindingModel.setCode("bgn");
+
+        this.assertOnlyOneErrorMessageThrown(this.validSeedCurrencyBindingModel, Constants.INVALID_CURRENCY_CODE_MESSAGE);
     }
 
     @Test
     public void seedCurrencyBindingModel_whenNullCurrencyRate_expectNullCurrencyRateErrorMessage() {
-        this.seedCurrencyBindingModel.setEuroRate(null);
+        this.validSeedCurrencyBindingModel.setEuroRate(null);
 
-        this.assertOnlyOneErrorMessageThrown(this.seedCurrencyBindingModel, SeedCurrencyBindingModel.NULL_CURRENCY_RATE_MESSAGE);
+        this.assertOnlyOneErrorMessageThrown(this.validSeedCurrencyBindingModel, SeedCurrencyBindingModel.NULL_CURRENCY_RATE_MESSAGE);
     }
 
     @Test
     public void seedCurrencyBindingModel_whenZeroRate_expectInvalidRateErrorMessage() {
-        this.seedCurrencyBindingModel.setEuroRate(new BigDecimal("0"));
+        this.validSeedCurrencyBindingModel.setEuroRate(new BigDecimal("0"));
 
-        this.assertOnlyOneErrorMessageThrown(this.seedCurrencyBindingModel, SeedCurrencyBindingModel.INVALID_CURRENCY_EURO_RATE);
+        this.assertOnlyOneErrorMessageThrown(this.validSeedCurrencyBindingModel, SeedCurrencyBindingModel.INVALID_CURRENCY_EURO_RATE);
     }
 
     @Test
     public void seedCurrencyBindingModel_whenNegativeEuroRate_expectInvalidRateErrorMessage() {
-        this.seedCurrencyBindingModel.setEuroRate(new BigDecimal("-1"));
+        this.validSeedCurrencyBindingModel.setEuroRate(new BigDecimal("-1"));
 
-        this.assertOnlyOneErrorMessageThrown(this.seedCurrencyBindingModel, SeedCurrencyBindingModel.INVALID_CURRENCY_EURO_RATE);
+        this.assertOnlyOneErrorMessageThrown(this.validSeedCurrencyBindingModel, SeedCurrencyBindingModel.INVALID_CURRENCY_EURO_RATE);
     }
 
+    @Test
+    public void seedCurrencyBindingModel_whenNullFlagUrl_expectInvalidFlagUrlMessage() {
+        this.validSeedCurrencyBindingModel.setCountryFlagUrl(null);
+        Set<String> errors = this.getErrorMessages(this.validSeedCurrencyBindingModel);
+
+        this.assertOnlyOneErrorMessageThrown(this.validSeedCurrencyBindingModel, SeedCurrencyBindingModel.INVALID_FLAG_URL_MESSAGE);
+    }
+
+    @Test
+    public void seedCurrencyBindingModel_whenInvalidUrlFlagUrl_expectInvalidFlagUrlMessage() {
+        this.validSeedCurrencyBindingModel.setCountryFlagUrl("https://www.youtube123.com/");
+        Set<String> errors = this.getErrorMessages(this.validSeedCurrencyBindingModel);
+
+        this.assertOnlyOneErrorMessageThrown(this.validSeedCurrencyBindingModel, SeedCurrencyBindingModel.INVALID_FLAG_URL_MESSAGE);
+    }
+
+    //TODO ImportRootHistoryCurrencyBindingModel tests
 
     private Set<String> getErrorMessages(Object bindingModel) {
         return this.validator.validate(bindingModel).stream().map(e -> e.getMessage()).collect(Collectors.toSet());
     }
 
     private void assertOnlyOneErrorThrown(Object bindingModel) {
-        Assert.assertEquals(1, this.getErrorMessages(bindingModel).size());
+        Assert.assertEquals("Expected only 1 error!", 1, this.getErrorMessages(bindingModel).size());
     }
 
     private void assertCorrectMessageThrown(Object bindingModel, String expectedErrorMessage) {
-        Assert.assertTrue(this.getErrorMessages(bindingModel).contains(expectedErrorMessage));
+        Assert.assertTrue("Wrong exception message thrown!", this.getErrorMessages(bindingModel).contains(expectedErrorMessage));
     }
 
     private void assertOnlyOneErrorMessageThrown(Object bindingModel, String expectedErrorMessage) {
