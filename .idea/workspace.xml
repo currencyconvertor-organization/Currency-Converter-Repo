@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bd101529-fac1-41ea-abb6-6948aa49c510" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrencyConvertorProject/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CurrencyConvertorProject/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/CurrencyConvertorProject/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/app/web/controllers/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="79" column="45" lean-forward="true" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
+            <state relative-caret-position="323">
+              <caret line="78" column="10" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -59,13 +60,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="88" selection-start-line="88" selection-end-line="88" />
+            <state relative-caret-position="240">
+              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mvnw.cmd" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/mvnw.cmd">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="CurrencyService.java" pinned="false" current-in-tab="false">
@@ -77,35 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CurrencyViewModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/app/domain/models/CurrencyViewModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding>
-                <element signature="e#394#395#0" expanded="true" />
-                <element signature="e#425#426#0" expanded="true" />
-                <element signature="e#477#478#0" expanded="true" />
-                <element signature="e#517#518#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CurrencyTableViewModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/app/domain/models/CurrencyTableViewModel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SeedCurrencyBindingModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/app/domain/models/SeedCurrencyBindingModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -124,8 +106,8 @@
         <option value="$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/app/web/controllers/HomeController.java" />
         <option value="$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/app/services/CurrencyServiceImpl.java" />
         <option value="$PROJECT_DIR$/CurrencyConvertorProject/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/CurrencyConvertorProject/pom.xml" />
         <option value="$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/constants/Constants.java" />
+        <option value="$PROJECT_DIR$/CurrencyConvertorProject/pom.xml" />
       </list>
     </option>
   </component>
@@ -506,7 +488,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559962346387</updated>
-      <workItem from="1559962347673" duration="19437000" />
+      <workItem from="1559962347673" duration="20399000" />
     </task>
     <task id="LOCAL-00001" summary="edited client url">
       <created>1560169734400</created>
@@ -519,10 +501,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19437000" />
+    <option name="totallyTimeSpent" value="20399000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="6" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
@@ -709,13 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -746,8 +722,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/app/web/controllers/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="79" column="45" lean-forward="true" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
+        <state relative-caret-position="323">
+          <caret line="78" column="10" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/mvnw.cmd">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/zaxxer/HikariCP/3.2.0/HikariCP-3.2.0.jar!/com/zaxxer/hikari/HikariDataSource.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
         </state>
       </provider>
     </entry>
