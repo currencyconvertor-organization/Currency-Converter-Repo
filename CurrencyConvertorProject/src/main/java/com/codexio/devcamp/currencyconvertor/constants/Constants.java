@@ -1,6 +1,8 @@
 package com.codexio.devcamp.currencyconvertor.constants;
 
 public abstract class Constants {
+    public final static String HISTORY_CURRENCIES_FILE_PATH = System.getProperty("user.dir") + "/src/main/resources/files/";
+    public final static String HISTORY_CURRENCIES_FILE_NAME = "currencies.pdf";
     private static final int CURRENCY_CODE_LENGTH = 3;
     public static final String INVALID_CURRENCY_CODE_MESSAGE =
             "Currency code should be " + CURRENCY_CODE_LENGTH + " characters long and all upper case!";

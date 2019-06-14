@@ -19,8 +19,7 @@ public class HistoryCurrencyScrape {
 
     public String getLastThreeMonthsRates() throws IOException {
 
-        Document document = Jsoup.connect(HISTORY_CURRENCIES_URL)
-                .get();
+        Document document = Jsoup.connect(HISTORY_CURRENCIES_URL).get();
         Elements cubes = document.select("cube");
         String xmlCurrencies = cubes.get(0).html();
 

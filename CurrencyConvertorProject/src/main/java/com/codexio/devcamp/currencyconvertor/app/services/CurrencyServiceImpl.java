@@ -11,11 +11,16 @@ import com.codexio.devcamp.currencyconvertor.app.utils.SecondaryCurrencyScrape;
 import com.codexio.devcamp.currencyconvertor.app.utils.ValidatorUtil;
 import com.codexio.devcamp.currencyconvertor.constants.Constants;
 import com.google.gson.Gson;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import org.modelmapper.ModelMapper;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
+import java.io.*;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -55,6 +60,19 @@ public class CurrencyServiceImpl implements CurrencyService {
         List<ImportRootHistoryCurrencyBindingModel> importRootHistoryCurrencyBindingModels =
                 List.of(this.gson.fromJson(jsonCurrencyHistory, ImportRootHistoryCurrencyBindingModel[].class));
         areAllCurrenciesValid(importRootHistoryCurrencyBindingModels);
+        StringBuilder sb = new StringBuilder();
+        stringFormatCurrencies(importRootHistoryCurrencyBindingModels, sb);
+        try {
+            Document document = new Document();
+            OutputStream file = new FileOutputStream(new File(Constants.HISTORY_CURRENCIES_FILE_PATH + Constants.HISTORY_CURRENCIES_FILE_NAME));
+            PdfWriter writer = PdfWriter.getInstance(document, file);
+            document.open();
+            document.add(new Paragraph(sb.toString()));
+            document.close();
+            writer.close();
+        } catch (DocumentException | FileNotFoundException e) {
+            e.printStackTrace();
+        }
         return importRootHistoryCurrencyBindingModels;
     }
 
@@ -86,6 +104,19 @@ public class CurrencyServiceImpl implements CurrencyService {
             } else {
                 this.currencyRepository.save(this.modelMapper.map(rawCurrency, Currency.class));
             }
+        });
+    }
+    private void stringFormatCurrencies(List<ImportRootHistoryCurrencyBindingModel> rootImportModels, StringBuilder sb) {
+        rootImportModels.forEach(rootModel->{
+            sb.append(rootModel.getTime())
+                    .append(System.lineSeparator());
+            Arrays.stream(rootModel.getCube())
+                    .forEach(model->{
+                        sb.append(model.getCurrency())
+                                .append(" - ").append(model.getRate())
+                                .append(System.lineSeparator());
+                    });
+            sb.append(System.lineSeparator());
         });
     }
 
