@@ -40,7 +40,7 @@ public class CurrencyScrape implements CurrencyReader {
         euroCurrency.setCode("EUR");
         euroCurrency.setName("Euro");
         euroCurrency.setEuroRate(new BigDecimal("1.00"));
-        euroCurrency.setCountryFlagUrl("https://metab.ern-net.eu/wp-content/uploads/2018/12/european-union-hi.jpg");
+        euroCurrency.setCountryFlagUrl("https://www.xe.com/themes/xe/images/flags/big/eur.png");
         currencies.add(euroCurrency);
 
         return currencies;
