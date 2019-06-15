@@ -20,6 +20,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -56,31 +57,34 @@ public class CurrencyServiceImpl implements CurrencyService {
 
     @Override
     public List<ImportRootHistoryCurrencyBindingModel> getLastThreeMonthRateBindingModels() throws IOException {
-        String jsonCurrencyHistory = this.historyCurrencyScrape.getLastThreeMonthsRates();
-        List<ImportRootHistoryCurrencyBindingModel> importRootHistoryCurrencyBindingModels =
-                List.of(this.gson.fromJson(jsonCurrencyHistory, ImportRootHistoryCurrencyBindingModel[].class));
+        List<ImportRootHistoryCurrencyBindingModel> importRootHistoryCurrencyBindingModels = getImportRootHistoryCurrencyBindingModels();
         areAllCurrenciesValid(importRootHistoryCurrencyBindingModels);
-        StringBuilder sb = new StringBuilder();
-        stringFormatCurrencies(importRootHistoryCurrencyBindingModels, sb);
+        return importRootHistoryCurrencyBindingModels;
+    }
+    /**
+     * This method is scheduled to create PDF file with last three months rates every day at 5am.
+     * Cron : 0 0 5 * * ?
+     */
+    @Scheduled(cron = "* * * * * ?")
+    private void createLastThreeMonthsRatesPDF() {
         try {
             Document document = new Document();
             OutputStream file = new FileOutputStream(new File(Constants.HISTORY_CURRENCIES_FILE_PATH + Constants.HISTORY_CURRENCIES_FILE_NAME));
             PdfWriter writer = PdfWriter.getInstance(document, file);
             document.open();
-            document.add(new Paragraph(sb.toString()));
+            document.add(new Paragraph(getStringFormattedHistoryCurrencyBindingModels()));
             document.close();
             writer.close();
-        } catch (DocumentException | FileNotFoundException e) {
+        } catch (DocumentException | IOException e) {
             e.printStackTrace();
         }
-        return importRootHistoryCurrencyBindingModels;
     }
 
     /**
      * This method is scheduled to seeds or update database of every hour.
-     * Cron : 0 0 0/1 1/1 * *
+     * Cron : * * 0/1 * * ?
      */
-    @Scheduled(cron = "0 0 0/1 1/1 * *")
+    @Scheduled(cron = "* * * * * *")
     private void seedCurrencies() {
         List<SeedCurrencyBindingModel> rawCurrencies;
         try {
@@ -106,18 +110,27 @@ public class CurrencyServiceImpl implements CurrencyService {
             }
         });
     }
-    private void stringFormatCurrencies(List<ImportRootHistoryCurrencyBindingModel> rootImportModels, StringBuilder sb) {
-        rootImportModels.forEach(rootModel->{
+
+    private String getStringFormattedHistoryCurrencyBindingModels() throws IOException {
+        StringBuilder sb = new StringBuilder();
+        List<ImportRootHistoryCurrencyBindingModel> rootImportModels = getImportRootHistoryCurrencyBindingModels();
+        rootImportModels.forEach(rootModel -> {
             sb.append(rootModel.getTime())
                     .append(System.lineSeparator());
             Arrays.stream(rootModel.getCube())
-                    .forEach(model->{
-                        sb.append(model.getCurrency())
-                                .append(" - ").append(model.getRate())
-                                .append(System.lineSeparator());
-                    });
+                    .forEach(model -> sb
+                            .append(model.getCurrency())
+                            .append(" - ")
+                            .append(model.getRate())
+                            .append(System.lineSeparator()));
             sb.append(System.lineSeparator());
         });
+        return sb.toString();
+    }
+
+    private List<ImportRootHistoryCurrencyBindingModel> getImportRootHistoryCurrencyBindingModels() throws IOException {
+        String jsonCurrencyHistory = this.historyCurrencyScrape.getLastThreeMonthsRates();
+        return List.of(this.gson.fromJson(jsonCurrencyHistory, ImportRootHistoryCurrencyBindingModel[].class));
     }
 
     private <T> void areAllCurrenciesValid(List<T> rawCurrencies) {
