@@ -5,6 +5,7 @@ import com.codexio.devcamp.currencyconvertor.constants.Constants;
 import org.jsoup.Jsoup;
 import org.jsoup.select.Elements;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -33,6 +34,15 @@ public class CurrencyScrape implements CurrencyReader {
 
             SecondaryCurrencyScrape.setSeedCurrencyBindingModel(currencies, seedCurrencyBindingModel, currencyCode, currencyName, countryFlagUrl, rate);
         });
+
+        //This website does not have Euro itself. Needs to be added
+        SeedCurrencyBindingModel euroCurrency = new SeedCurrencyBindingModel();
+        euroCurrency.setCode("EUR");
+        euroCurrency.setName("Euro");
+        euroCurrency.setEuroRate(new BigDecimal("1.00"));
+        euroCurrency.setCountryFlagUrl("https://metab.ern-net.eu/wp-content/uploads/2018/12/european-union-hi.jpg");
+        currencies.add(euroCurrency);
+
         return currencies;
     }
 }
