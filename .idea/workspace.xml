@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bd101529-fac1-41ea-abb6-6948aa49c510" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrencyConvertorProject/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CurrencyConvertorProject/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/constants/Constants.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/CurrencyConvertorProject/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +18,17 @@
       <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+            <state relative-caret-position="135">
+              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="system.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/system.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -36,17 +45,17 @@
       <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/app/web/controllers/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="78" column="10" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
+            <state relative-caret-position="90">
+              <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/constants/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="31" selection-start-line="11" selection-end-line="12" />
+            <state relative-caret-position="197">
+              <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -60,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+              <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -83,15 +92,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CurrencyTableViewModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/app/domain/models/CurrencyTableViewModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -103,11 +103,12 @@
         <option value="$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/app/domain/models/CurrencyViewModel.java" />
         <option value="$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/app/domain/models/CurrencyTableViewModel.java" />
         <option value="$PROJECT_DIR$/CurrencyConvertorProject/src/main/resources/files/CurrencyRatesHistory" />
-        <option value="$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/app/web/controllers/HomeController.java" />
         <option value="$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/app/services/CurrencyServiceImpl.java" />
-        <option value="$PROJECT_DIR$/CurrencyConvertorProject/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/constants/Constants.java" />
         <option value="$PROJECT_DIR$/CurrencyConvertorProject/pom.xml" />
+        <option value="$PROJECT_DIR$/CurrencyConvertorProject/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/CurrencyConvertorProject/system.properties" />
+        <option value="$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/app/web/controllers/HomeController.java" />
+        <option value="$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/constants/Constants.java" />
       </list>
     </option>
   </component>
@@ -488,7 +489,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559962346387</updated>
-      <workItem from="1559962347673" duration="20399000" />
+      <workItem from="1559962347673" duration="22353000" />
     </task>
     <task id="LOCAL-00001" summary="edited client url">
       <created>1560169734400</created>
@@ -501,14 +502,14 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20399000" />
+    <option name="totallyTimeSpent" value="22353000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5007153" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
       <window_info id="Capture Tool" order="7" />
@@ -524,11 +525,11 @@
       <window_info id="Image Layers" order="1" />
       <window_info anchor="bottom" id="Java Enterprise" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="bottom" id="Run" order="9" />
+      <window_info anchor="bottom" id="Run" order="9" sideWeight="0.49928468" />
       <window_info anchor="bottom" id="Version Control" order="5" />
       <window_info anchor="bottom" id="Spring" order="0" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.24964234" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49928468" visible="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.24964234" />
       <window_info anchor="right" id="Bean Validation" order="5" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="4" />
@@ -692,13 +693,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/app/utils/CurrencyScrape.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -710,20 +704,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="732">
           <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/constants/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="31" selection-start-line="11" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/app/web/controllers/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="78" column="10" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -740,7 +720,40 @@
     <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/system.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../mlx/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/app/web/controllers/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CurrencyConvertorProject/src/main/java/com/codexio/devcamp/currencyconvertor/constants/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
         </state>
       </provider>
     </entry>
