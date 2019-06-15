@@ -4,6 +4,7 @@ import com.codexio.devcamp.currencyconvertor.app.domain.entities.Currency;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
@@ -22,5 +23,6 @@ public interface CurrencyRepository extends JpaRepository<Currency, Long> {
     @Transactional
     @Modifying
     @Query(value = "UPDATE Currency c SET c.euroRate = :newEuroRate WHERE c.code = :currencyCode")
-    void updateCurrencyRate(String currencyCode, BigDecimal newEuroRate);
+    void updateCurrencyRate(@Param(value = "currencyCode") String currencyCode,
+                            @Param(value = "newEuroRate") BigDecimal newEuroRate);
 }
